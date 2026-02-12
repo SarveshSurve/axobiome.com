@@ -1,10 +1,204 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Axobiome</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Inter', sans-serif;
+      background: #f5f7fa;
+      color: #1a1a1a;
+    }
+
+    header {
+      background: #ffffff;
+      padding: 20px 40px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    header h1 {
+      margin: 0;
+      font-weight: 700;
+      color: #2c3e50;
+    }
+
+    nav a {
+      margin-left: 25px;
+      text-decoration: none;
+      color: #2c3e50;
+      font-weight: 500;
+      transition: color 0.2s;
+    }
+
+    nav a:hover {
+      color: #0077cc;
+    }
+
+    .hero {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      height: 80vh;
+      background: linear-gradient(135deg, #0077cc 0%, #00c6ff 100%);
+      color: white;
+      padding: 0 20px;
+    }
+
+    .hero h2 {
+      font-size: 3em;
+      margin-bottom: 20px;
+    }
+
+    .hero p {
+      font-size: 1.3em;
+      max-width: 600px;
+      margin-bottom: 30px;
+    }
+
+    .btn {
+      background: white;
+      color: #0077cc;
+      padding: 15px 30px;
+      border-radius: 8px;
+      font-weight: 600;
+      text-decoration: none;
+      transition: background 0.3s, color 0.3s;
+    }
+
+    .btn:hover {
+      background: #0077cc;
+      color: white;
+    }
+
+    section {
+      padding: 80px 20px;
+      max-width: 1000px;
+      margin: auto;
+    }
+
+    section h3 {
+      text-align: center;
+      margin-bottom: 40px;
+      font-size: 2em;
+      color: #2c3e50;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 30px;
+    }
+
+    .card {
+      background: white;
+      border-radius: 12px;
+      padding: 30px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+      text-align: center;
+      transition: transform 0.3s;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+    }
+
+    footer {
+      background: #2c3e50;
+      color: white;
+      padding: 40px 20px;
+      text-align: center;
+    }
+
+    footer a {
+      color: #00c6ff;
+      text-decoration: none;
+    }
+
+    footer a:hover {
+      text-decoration: underline;
+    }
+  </style>
 </head>
+
 <body>
-  <h1>Welcome to Axobiome</h1>
-  <p>Website coming soon.</p>
+
+  <!-- Header -->
+  <header>
+    <h1>Axobiome</h1>
+    <nav>
+      <a href="#about">About</a>
+      <a href="#research">Research</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <!-- Hero Section -->
+  <div class="hero">
+    <h2>Innovating Microbiome Science</h2>
+    <p>Axobiome is pioneering microbiome solutions for human health and biotechnology. Explore our work and vision.</p>
+    <a href="#contact" class="btn">Get in Touch</a>
+  </div>
+
+  <!-- About Section -->
+  <section id="about">
+    <h3>About Us</h3>
+    <div class="grid">
+      <div class="card">
+        <h4>Mission</h4>
+        <p>We aim to unlock the potential of the microbiome to transform health and biotech applications.</p>
+      </div>
+      <div class="card">
+        <h4>Vision</h4>
+        <p>Leading microbiome innovation through research, technology, and collaboration.</p>
+      </div>
+      <div class="card">
+        <h4>Team</h4>
+        <p>Our interdisciplinary team combines microbiology, bioinformatics, and biotech expertise.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Research Section -->
+  <section id="research">
+    <h3>Our Research</h3>
+    <div class="grid">
+      <div class="card">
+        <h4>Human Microbiome</h4>
+        <p>Studying gut and skin microbiome interactions to develop novel therapies.</p>
+      </div>
+      <div class="card">
+        <h4>Biotech Applications</h4>
+        <p>Leveraging microbial communities for sustainable biotech solutions.</p>
+      </div>
+      <div class="card">
+        <h4>Data Science</h4>
+        <p>Using bioinformatics to analyze microbiome datasets and drive insights.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact">
+    <h3>Contact Us</h3>
+    <p>Email: <a href="mailto:info@axobiome.com">info@axobiome.com</a></p>
+    <p>Follow us on <a href="#">Twitter</a> | <a href="#">LinkedIn</a></p>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    &copy; 2026 Axobiome. All rights reserved.
+  </footer>
+
 </body>
 </html>
