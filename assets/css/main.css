@@ -3142,3 +3142,76 @@ input, select, textarea {
 				}
 
 	}
+/* TEAM CARDS */
+
+.team-slider {
+  display: flex;
+  gap: 40px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.team-card {
+  width: 220px;
+  text-align: center;
+}
+
+.img-wrap {
+  position: relative;
+  overflow: hidden;
+  border-radius: 50%;
+}
+
+.img-wrap img {
+  width: 100%;
+  border-radius: 50%;
+  filter: grayscale(100%);
+  transition: 0.4s;
+}
+
+/* grayscale -> color */
+.img-wrap:hover img {
+  filter: grayscale(0%);
+}
+
+/* BIO OVERLAY */
+.bio {
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.75);
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 15px;
+  opacity: 0;
+  transition: 0.3s;
+  border-radius: 50%;
+  font-size: 14px;
+}
+
+.img-wrap:hover .bio {
+  opacity: 1;
+}
+
+/* LinkedIn icon */
+.team-card .fa-linkedin {
+  font-size: 22px;
+  margin-top: 10px;
+  color: #0A66C2;
+}
+
+/* MOBILE CAROUSEL */
+@media (max-width: 768px) {
+  .team-slider {
+    overflow-x: auto;
+    flex-wrap: nowrap;
+    scroll-snap-type: x mandatory;
+  }
+
+  .team-card {
+    flex: 0 0 80%;
+    scroll-snap-align: center;
+  }
+}
