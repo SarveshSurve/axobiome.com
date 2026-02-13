@@ -1,227 +1,135 @@
-<!DOCTYPE HTML>
-<html>
+<!DOCTYPE html>
+<html lang="en">
 <head>
-	<title>Axobiome | CF Microbiome Therapeutics</title>
-	<meta charset="utf-8" />
-	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Axobiome - Coming Soon</title>
+  
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
 
-	<link rel="stylesheet" href="assets/css/main.css" />
+  <!-- Font Awesome for social icons (optional) -->
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
 
-	<!-- Font Awesome -->
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <style>
+    /* Reset & body */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: linear-gradient(135deg, #8cd1a8, #4ca1af);
+      color: #fff;
+      text-align: center;
+      overflow: hidden;
+    }
+
+    .container {
+      max-width: 600px;
+      padding: 2em;
+      background: rgba(0,0,0,0.2);
+      border-radius: 16px;
+      backdrop-filter: blur(5px);
+      box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+    }
+
+    h1 {
+      font-size: 2.5em;
+      margin-bottom: 0.5em;
+      letter-spacing: 2px;
+    }
+
+    p {
+      font-size: 1.2em;
+      margin-bottom: 2em;
+    }
+
+    .email-input {
+      display: flex;
+      justify-content: center;
+      gap: 0.5em;
+    }
+
+    .email-input input {
+      padding: 0.7em 1em;
+      border-radius: 8px;
+      border: none;
+      outline: none;
+      font-size: 1em;
+    }
+
+    .email-input button {
+      padding: 0.7em 1.2em;
+      border: none;
+      border-radius: 8px;
+      background-color: #fff;
+      color: #4ca1af;
+      font-weight: bold;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    .email-input button:hover {
+      background-color: #f1f1f1;
+      transform: translateY(-2px);
+    }
+
+    /* subtle pulse animation for coming soon text */
+    h1 {
+      animation: pulse 2s infinite;
+    }
+
+    @keyframes pulse {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.7; }
+    }
+
+    /* optional social icons */
+    .socials {
+      margin-top: 1.5em;
+      display: flex;
+      justify-content: center;
+      gap: 1.5em;
+    }
+
+    .socials a {
+      color: #fff;
+      font-size: 1.5em;
+      transition: transform 0.2s ease;
+    }
+
+    .socials a:hover {
+      transform: scale(1.2);
+      color: #ffd700;
+    }
+
+  </style>
 </head>
+<body>
 
-<body class="is-preload">
+  <div class="container">
+    <h1>Axobiome</h1>
+    <p>Our website is coming soon. Stay tuned!</p>
 
-<!-- Header -->
-<section id="header">
-	<header class="major">
-		<h1>Axobiome</h1>
-		<p>Engineering next-generation probiotics for cystic fibrosis</p>
-	</header>
-	<div class="container">
-		<ul class="actions special">
-			<li><a href="#one" class="button primary scrolly">Learn More</a></li>
-		</ul>
-	</div>
-</section>
+    <!-- Optional email subscription -->
+    <div class="email-input">
+      <input type="email" placeholder="Enter your email" />
+      <button>Notify Me</button>
+    </div>
 
-<!-- One -->
-<section id="one" class="main special">
-	<div class="container">
-		<span class="image fit primary"><img src="images/pic01.jpg" alt="" /></span>
-		<div class="content">
-			<header class="major">
-				<h2>Our Mission</h2>
-			</header>
-			<p>
-				Axobiome develops microbiome-based therapeutics for cystic fibrosis.
-				We aim to restore microbial balance, improve gut and lung health,
-				and support better clinical outcomes through science-driven innovation.
-			</p>
-		</div>
-		<a href="#two" class="goto-next scrolly">Next</a>
-	</div>
-</section>
-
-<!-- Two -->
-<section id="two" class="main special">
-	<div class="container">
-		<span class="image fit primary"><img src="images/pic02.jpg" alt="" /></span>
-		<div class="content">
-			<header class="major">
-				<h2>What We Do</h2>
-			</header>
-			<p>
-				We combine microbiome research, genomics, and translational science
-				to design targeted probiotic strategies for CF-associated dysbiosis.
-			</p>
-
-			<ul class="icons-grid">
-				<li>
-					<span class="icon solid major fa-dna"></span>
-					<h3>Microbiome Research</h3>
-				</li>
-				<li>
-					<span class="icon solid major fa-flask"></span>
-					<h3>Therapeutic Development</h3>
-				</li>
-				<li>
-					<span class="icon solid major fa-chart-line"></span>
-					<h3>Data-Driven Design</h3>
-				</li>
-				<li>
-					<span class="icon solid major fa-heartbeat"></span>
-					<h3>Patient Impact</h3>
-				</li>
-			</ul>
-		</div>
-		<a href="#three" class="goto-next scrolly">Next</a>
-	</div>
-</section>
-
-<!-- Three -->
-<section id="three" class="main special">
-	<div class="container">
-		<span class="image fit primary"><img src="images/pic03.jpg" alt="" /></span>
-		<div class="content">
-			<header class="major">
-				<h2>Why It Matters</h2>
-			</header>
-			<p>
-				Chronic antibiotic exposure in CF disrupts microbial communities.
-				Rationally designed probiotics can help rebuild healthier ecosystems
-				and improve quality of life.
-			</p>
-		</div>
-		<a href="#team" class="goto-next scrolly">Next</a>
-	</div>
-</section>
-
-<!-- TEAM -->
-<section id="team" class="main special">
-	<div class="container">
-		<header class="major">
-			<h2>Leadership Team</h2>
-		</header>
-
-		<div class="team-slider">
-
-			<div class="team-card">
-				<div class="img-wrap">
-					<img src="images/team_ceo.jpg">
-					<div class="bio">PhD microbiologist with expertise in CF microbiomes.</div>
-				</div>
-				<h3>Rebecca A. Valls, Ph.D.</h3>
-				<p>CEO</p>
-				<a href="#" class="icon brands fa-linkedin"></a>
-			</div>
-
-			<div class="team-card">
-				<div class="img-wrap">
-					<img src="images/team_cmo.jpg">
-					<div class="bio">Clinician-scientist specializing in cystic fibrosis.</div>
-				</div>
-				<h3>Kaitlyn E. Barrack, Ph.D. </h3>
-				<p>CMO</p>
-				<a href="#" class="icon brands fa-linkedin"></a>
-			</div>
-
-			<div class="team-card">
-				<div class="img-wrap">
-					<img src="images/team_cpo.jpg">
-					<div class="bio">Expert in live biotherapeutic product development.</div>
-				</div>
-				<h3>Sarvesh V. Surve, M.Sc.</h3>
-				<p>CPO</p>
-				<a href="#" class="icon brands fa-linkedin"></a>
-			</div>
-
-		</div>
-
-		<a href="#advisory" class="goto-next scrolly">Next</a>
-	</div>
-</section>
-
-<!-- ADVISORY -->
-<section id="advisory" class="main special">
-	<div class="container">
-		<header class="major">
-			<h2>Scientific Advisory Board</h2>
-		</header>
-
-		<div class="team-slider">
-
-			<div class="team-card">
-				<div class="img-wrap">
-					<img src="images/advisor1.jpg">
-					<div class="bio">Leader in Microbiology and Genetics</div>
-				</div>
-				<h3>George A. O'Toole, Ph.D.</h3>
-				<p>Advisor</p>
-				<a href="#" class="icon brands fa-linkedin"></a>
-			</div>
-
-			<div class="team-card">
-				<div class="img-wrap">
-					<img src="images/advisor2.jpg">
-					<div class="bio">Leader in CF research.</div>
-				</div>
-				<h3>Jen Bomberger, Ph.D.</h3>
-				<p>Advisor</p>
-				<a href="#" class="icon brands fa-linkedin"></a>
-			</div>
-
-		</div>
-
-		<a href="#footer" class="goto-next scrolly">Next</a>
-	</div>
-</section>
-
-<!-- Footer -->
-<section id="footer">
-	<div class="container">
-		<header class="major">
-			<h2>Contact Axobiome</h2>
-		</header>
-
-		<form method="post" action="#">
-			<div class="row gtr-uniform">
-				<div class="col-6 col-12-xsmall">
-					<input type="text" placeholder="Name">
-				</div>
-				<div class="col-6 col-12-xsmall">
-					<input type="email" placeholder="Email">
-				</div>
-				<div class="col-12">
-					<textarea placeholder="Message" rows="4"></textarea>
-				</div>
-				<div class="col-12">
-					<ul class="actions special">
-						<li><input type="submit" value="Send Message" class="primary"></li>
-					</ul>
-				</div>
-			</div>
-		</form>
-	</div>
-
-	<footer>
-		<ul class="copyright">
-			<li>&copy; Axobiome</li>
-			<li>Design: HTML5 UP</li>
-		</ul>
-	</footer>
-</section>
-
-<!-- Scripts -->
-<script src="assets/js/jquery.min.js"></script>
-<script src="assets/js/jquery.scrollex.min.js"></script>
-<script src="assets/js/jquery.scrolly.min.js"></script>
-<script src="assets/js/browser.min.js"></script>
-<script src="assets/js/breakpoints.min.js"></script>
-<script src="assets/js/util.js"></script>
-<script src="assets/js/main.js"></script>
+    <!-- Optional social links -->
+    <div class="socials">
+      <a href="#" target="_blank"><i class="fab fa-linkedin"></i></a>
+      <a href="#" target="_blank"><i class="fab fa-twitter"></i></a>
+    </div>
+  </div>
 
 </body>
 </html>
-
