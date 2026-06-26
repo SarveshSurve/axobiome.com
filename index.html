@@ -1,135 +1,237 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Axobiome - Coming Soon</title>
-  
-  <!-- Google Font -->
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Axobiome — Precision Gut Probiotics for the Airways</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Lora:ital,wght@0,400;0,600;1,400&display=swap');
+  *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+  :root{
+    --teal:#2BBDB4;--teal-dark:#1A9490;--teal-deep:#0D6B67;
+    --teal-light:#E8F8F7;--charcoal:#1E2A2A;--slate:#4A5E5D;
+    --cream:#FAFAF8;--white:#FFFFFF;
+  }
+  html{scroll-behavior:smooth;}
+  body{font-family:'Inter',sans-serif;background:var(--white);color:var(--charcoal);line-height:1.6;overflow-x:hidden;}
 
-  <!-- Font Awesome for social icons (optional) -->
-  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+  /* NAV */
+  nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(255,255,255,0.96);backdrop-filter:blur(10px);border-bottom:1px solid rgba(43,189,180,0.12);padding:0 6%;height:72px;display:flex;align-items:center;justify-content:space-between;}
+  /* ↓↓↓ LOGO SIZE — change the height value here to resize the nav logo ↓↓↓ */
+  .nav-logo img{height:80px;width:auto;}
+  /* ↑↑↑ LOGO SIZE — width stays auto so it scales proportionally          ↑↑↑ */
+  .nav-links{display:flex;gap:2.5rem;list-style:none;align-items:center;}
+  .nav-links a{font-size:0.85rem;font-weight:400;color:var(--slate);text-decoration:none;transition:color 0.2s;}
+  .nav-links a:hover{color:var(--teal-dark);}
+  .nav-cta{background:var(--teal)!important;color:var(--white)!important;padding:0.5rem 1.25rem;border-radius:100px;font-weight:500!important;}
+  .nav-cta:hover{background:var(--teal-dark)!important;}
 
-  <style>
-    /* Reset & body */
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
+  /* HERO */
+  #hero{
+    min-height:100vh;
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    align-items:center;
+    padding-top:72px;
+    position:relative;
+    overflow:hidden;
+  }
+  .hero-bg-logo{
+    position:absolute;
+    top:50%; right:-5%;
+    transform:translateY(-50%);
+    width:65%;
+    opacity:0.2;
+    pointer-events:none;
+    z-index:0;
+  }
+  .hero-left{padding:80px 6% 80px 8%;position:relative;z-index:1;}
+  .hero-right{
+    background:var(--teal-light);
+    height:100%;
+    min-height:calc(100vh - 72px);
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    padding:80px 6%;
+    position:relative;
+    z-index:1;
+    overflow:hidden;
+  }
+  .hero-right::before{content:'';position:absolute;top:-80px;right:-80px;width:360px;height:360px;border-radius:50%;background:rgba(43,189,180,0.12);}
+  .hero-right::after{content:'';position:absolute;bottom:-60px;left:-40px;width:240px;height:240px;border-radius:50%;background:rgba(43,189,180,0.08);}
 
-    body {
-      font-family: 'Inter', sans-serif;
-      height: 100vh;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      background: linear-gradient(135deg, #8cd1a8, #4ca1af);
-      color: #fff;
-      text-align: center;
-      overflow: hidden;
-    }
+  .hero-tag{display:inline-block;font-size:0.72rem;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:var(--teal-dark);background:rgba(43,189,180,0.12);padding:0.4rem 1rem;border-radius:100px;margin-bottom:2rem;}
+  h1{font-family:'Lora',serif;font-size:clamp(2.2rem,4vw,3.2rem);font-weight:400;line-height:1.2;letter-spacing:-0.02em;color:var(--charcoal);margin-bottom:1.5rem;}
+  h1 em{font-style:italic;color:var(--teal-dark);}
+  .hero-sub{font-size:1rem;color:var(--slate);line-height:1.8;font-weight:300;max-width:440px;margin-bottom:2.5rem;}
+  .hero-actions{display:flex;gap:1rem;flex-wrap:wrap;}
+  .btn{display:inline-block;padding:0.8rem 1.75rem;border-radius:100px;font-size:0.875rem;font-weight:500;text-decoration:none;transition:all 0.2s;}
+  .btn-teal{background:var(--teal);color:var(--white);}
+  .btn-teal:hover{background:var(--teal-dark);}
+  .btn-ghost{border:1.5px solid var(--teal);color:var(--teal-dark);}
+  .btn-ghost:hover{background:var(--teal-light);}
 
-    .container {
-      max-width: 600px;
-      padding: 2em;
-      background: rgba(0,0,0,0.2);
-      border-radius: 16px;
-      backdrop-filter: blur(5px);
-      box-shadow: 0 10px 30px rgba(0,0,0,0.3);
-    }
 
-    h1 {
-      font-size: 2.5em;
-      margin-bottom: 0.5em;
-      letter-spacing: 2px;
-    }
 
-    p {
-      font-size: 1.2em;
-      margin-bottom: 2em;
-    }
+  /* SECTIONS */
+  section{padding:100px 8%;}
+  section:nth-child(even){background:var(--cream);}
+  .eyebrow{font-size:0.72rem;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:var(--teal-dark);margin-bottom:1rem;}
+  h2{font-family:'Lora',serif;font-size:clamp(1.8rem,3vw,2.6rem);font-weight:400;line-height:1.2;color:var(--charcoal);margin-bottom:1.5rem;}
+  .lead{font-size:1rem;color:var(--slate);line-height:1.8;font-weight:300;max-width:600px;margin-bottom:3rem;}
 
-    .email-input {
-      display: flex;
-      justify-content: center;
-      gap: 0.5em;
-    }
+  /* PROBLEM */
+  .problem-cards{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;}
+  .problem-card{background:var(--white);border-radius:12px;padding:2rem;border-top:3px solid var(--teal);box-shadow:0 2px 20px rgba(13,107,103,0.06);}
+  .big{font-family:'Lora',serif;font-size:2.8rem;font-weight:600;color:var(--teal-dark);line-height:1;margin-bottom:0.75rem;}
+  .problem-card h3{font-size:1rem;font-weight:600;color:var(--charcoal);margin-bottom:0.75rem;}
+  .problem-card p{font-size:0.875rem;color:var(--slate);line-height:1.7;font-weight:300;}
 
-    .email-input input {
-      padding: 0.7em 1em;
-      border-radius: 8px;
-      border: none;
-      outline: none;
-      font-size: 1em;
-    }
+  /* PRODUCT */
+  #product{background:var(--white);}
+  .product-layout{display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:start;}
+  .product-main h3{font-size:1.3rem;font-weight:600;color:var(--charcoal);margin-bottom:1.25rem;}
+  .product-main p{font-size:0.9rem;color:var(--slate);line-height:1.8;font-weight:300;margin-bottom:1rem;}
+  .tags{display:flex;flex-wrap:wrap;gap:0.5rem;margin-top:1.5rem;}
+  .tag{font-size:0.72rem;font-weight:500;color:var(--teal-deep);background:var(--teal-light);padding:0.35rem 0.85rem;border-radius:100px;border:1px solid rgba(43,189,180,0.25);}
+  .product-visual{background:var(--teal-light);border-radius:16px;padding:2rem;}
+  .product-visual-title{font-size:0.72rem;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:var(--teal-dark);margin-bottom:1.5rem;}
+  .proof-item{display:flex;align-items:flex-start;gap:1.25rem;margin-bottom:1.5rem;padding-bottom:1.5rem;border-bottom:1px solid rgba(43,189,180,0.2);}
+  .proof-item:last-child{margin-bottom:0;padding-bottom:0;border-bottom:none;}
+  .proof-num{font-family:'Lora',serif;font-size:2rem;font-weight:600;color:var(--teal-dark);line-height:1;flex-shrink:0;min-width:70px;}
+  .proof-desc{font-size:0.85rem;color:var(--slate);line-height:1.6;font-weight:300;padding-top:0.2rem;}
 
-    .email-input button {
-      padding: 0.7em 1.2em;
-      border: none;
-      border-radius: 8px;
-      background-color: #fff;
-      color: #4ca1af;
-      font-weight: bold;
-      cursor: pointer;
-      transition: all 0.3s ease;
-    }
+  /* CONTACT */
+  #contact{
+    text-align:center;
+    padding:120px 8%;
+    background-image:url('axobiome-bg.jpg');
+    background-size:cover;
+    background-position:center;
+    position:relative;
+  }
+  /* FIX 2: overlay opacity increased from 0.55 to 0.82 so text is readable */
+  #contact::before{
+    content:'';
+    position:absolute;
+    inset:0;
+    background:rgba(13,107,103,0.82);
+    z-index:0;
+  }
+  #contact h2{color:var(--white);margin-bottom:1rem;position:relative;z-index:1;}
+  #contact p{color:rgba(255,255,255,0.75);font-size:1rem;font-weight:300;max-width:500px;margin:0 auto 2.5rem;line-height:1.75;position:relative;z-index:1;}
+  .contact-email{display:inline-block;background:var(--white);color:var(--teal-deep);padding:0.9rem 2.25rem;border-radius:100px;font-weight:600;font-size:0.9rem;text-decoration:none;transition:opacity 0.2s;position:relative;z-index:1;}
+  .contact-email:hover{opacity:0.88;}
 
-    .email-input button:hover {
-      background-color: #f1f1f1;
-      transform: translateY(-2px);
-    }
+  footer{background:var(--charcoal);text-align:center;padding:1.5rem 8%;font-size:0.78rem;color:rgba(255,255,255,0.3);}
 
-    /* subtle pulse animation for coming soon text */
-    h1 {
-      animation: pulse 2s infinite;
-    }
-
-    @keyframes pulse {
-      0%, 100% { opacity: 1; }
-      50% { opacity: 0.7; }
-    }
-
-    /* optional social icons */
-    .socials {
-      margin-top: 1.5em;
-      display: flex;
-      justify-content: center;
-      gap: 1.5em;
-    }
-
-    .socials a {
-      color: #fff;
-      font-size: 1.5em;
-      transition: transform 0.2s ease;
-    }
-
-    .socials a:hover {
-      transform: scale(1.2);
-      color: #ffd700;
-    }
-
-  </style>
+  @media(max-width:768px){
+    #hero{grid-template-columns:1fr;}
+    .hero-right{min-height:auto;padding:60px 6%;}
+    .problem-cards{grid-template-columns:1fr;}
+    .product-layout{grid-template-columns:1fr;gap:3rem;}
+    .hero-bg-logo{display:none;}
+  }
+</style>
 </head>
 <body>
 
-  <div class="container">
-    <h1>Axobiome</h1>
-    <p>Our website is coming soon. Stay tuned!</p>
+<nav>
+  <a href="#hero" class="nav-logo">
+    <img src="axobiome-logo.jpg" alt="Axobiome">
+  </a>
+  <ul class="nav-links">
+    <li><a href="#problem">The Problem</a></li>
+    <li><a href="#product">Product</a></li>
+    <li><a href="#contact" class="nav-cta">Contact us</a></li>
+  </ul>
+</nav>
 
-    <!-- Optional email subscription -->
-    <div class="email-input">
-      <input type="email" placeholder="Enter your email" />
-      <button>Notify Me</button>
-    </div>
-
-    <!-- Optional social links -->
-    <div class="socials">
-      <a href="#" target="_blank"><i class="fab fa-linkedin"></i></a>
-      <a href="#" target="_blank"><i class="fab fa-twitter"></i></a>
+<section id="hero">
+  <img class="hero-bg-logo" src="axobiome-logo.jpg" alt="">
+  <div class="hero-left">
+    <div class="hero-tag">Gut&ndash;Lung Axis Therapeutics</div>
+    <h1>Precision gut probiotics<br>for the <em>airways</em></h1>
+    <p class="hero-sub">A rationally designed probiotic platform targeting the gut&ndash;lung axis to reduce pulmonary inflammation in patients with cystic fibrosis, COPD, and asthma.</p>
+    <div class="hero-actions">
+      <a href="#contact" class="btn btn-teal">Partner with us</a>
+      <a href="#product" class="btn btn-ghost">See the science</a>
     </div>
   </div>
+</section>
+
+<section id="problem">
+  <div class="eyebrow">The Problem</div>
+  <h2>An unmet need across<br>chronic airway disease</h2>
+  <p class="lead">Millions of patients with CF, COPD, and asthma experience gut dysbiosis and chronic pulmonary inflammation that current treatments do not adequately address.</p>
+  <div class="problem-cards">
+    <div class="problem-card">
+      <div class="big">40K</div>
+      <h3>People with CF in the US</h3>
+      <p>65% experience chronic GI symptoms independent of existing therapies. Even patients on CFTR modulators retain significant gut dysbiosis and residual pulmonary inflammation.</p>
+    </div>
+    <div class="problem-card">
+      <div class="big">16M+</div>
+      <h3>Americans with COPD</h3>
+      <p>The fourth leading cause of death globally. Gut dysbiosis is increasingly recognized as a feature of chronic airway inflammation in COPD, yet no approved therapy targets the gut-lung connection.</p>
+    </div>
+    <div class="problem-card">
+      <div class="big">25M</div>
+      <h3>Americans with asthma</h3>
+      <p>Asthma affects 1 in 13 people in the US. Emerging evidence links gut microbial imbalance to airway immune dysregulation, pointing to the gut-lung axis as a therapeutic opportunity.</p>
+    </div>
+  </div>
+</section>
+
+<section id="product">
+  <div class="eyebrow">Our Product</div>
+  <h2>Axoguard 01</h2>
+  <div class="product-layout">
+    <div class="product-main">
+      <h3>A probiotic built for disease</h3>
+      <p>Axoguard 01 is a rationally designed cocktail of three clinically selected bacterial strains, adapted specifically to survive and function in the gut environment of patients with chronic airway disease.</p>
+      <p>Combined with an optimized prebiotic formulation, it maximizes immune-modulatory metabolite output where generic probiotics fall short. As an oral dietary supplement, it offers a faster and more accessible path to patients than a traditional drug development program.</p>
+      <p>Axoguard 01 is designed to complement existing therapies such as CFTR modulators, addressing the residual gut dysbiosis they do not correct.</p>
+      <div class="tags">
+        <span class="tag">Disease-adapted strains</span>
+        <span class="tag">Oral dietary supplement</span>
+        <span class="tag">Gut-lung axis targeted</span>
+        <span class="tag">No IND required</span>
+        <span class="tag">Dartmouth IP &mdash; exclusively licensed</span>
+      </div>
+    </div>
+    <div class="product-visual">
+      <div class="product-visual-title">Proof-of-concept data</div>
+      <div class="proof-item">
+        <div class="proof-num">60%</div>
+        <div class="proof-desc">Reduction in GI inflammatory markers in human CF intestinal cell cultures</div>
+      </div>
+      <div class="proof-item">
+        <div class="proof-num">59%</div>
+        <div class="proof-desc">Reduction in pulmonary inflammatory markers in CF mice following bacterial challenge</div>
+      </div>
+      <div class="proof-item">
+        <div class="proof-num">250%</div>
+        <div class="proof-desc">Increase in gut SCFA production in CF mice versus untreated controls</div>
+      </div>
+      <div class="proof-item">
+        <div class="proof-num">68%</div>
+        <div class="proof-desc">Higher survival of the disease-adapted strain versus its parental strain in CF gut media</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="contact">
+  <h2>Let&rsquo;s talk</h2>
+  <p>We are actively seeking collaborators, clinical partners, and investors to advance Axoguard 01 toward clinical evaluation in patients with CF, COPD, and asthma.</p>
+  <a href="mailto:rebecca@axobiome.com" class="contact-email">rebecca@axobiome.com</a>
+</section>
+
+<footer>
+  <p>&copy; 2026 Axobiome, Inc. &middot; Hanover, NH</p>
+</footer>
 
 </body>
 </html>
