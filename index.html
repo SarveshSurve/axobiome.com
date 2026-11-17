@@ -110,9 +110,9 @@
 
   /* TEAM */
   #team{background:var(--cream);}
-  .team-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:2rem;}
+  .team-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:2rem;margin-bottom:2rem;}
+  .team-grid:last-child{margin-bottom:0;}
   .team-card{background:var(--white);border-radius:12px;padding:1.75rem 2rem;box-shadow:0 2px 20px rgba(13,107,103,0.06);}
-  .team-card.lead-card{grid-column:1 / -1;border-left:3px solid var(--teal);}
   .team-name{font-size:1.05rem;font-weight:600;color:var(--charcoal);margin-bottom:0.2rem;}
   .team-role{font-size:0.82rem;font-weight:500;color:var(--teal-dark);margin-bottom:0.6rem;}
   .team-affil{font-size:0.82rem;color:var(--slate);line-height:1.6;font-weight:300;}
@@ -147,7 +147,6 @@
     .problem-cards{grid-template-columns:1fr;}
     .product-layout{grid-template-columns:1fr;gap:3rem;}
     .team-grid{grid-template-columns:1fr;}
-    .team-card.lead-card{grid-column:1;}
     .hero-bg-logo{display:none;}
   }
 </style>
@@ -172,7 +171,7 @@
   <div class="hero-left">
     <div class="hero-tag">Gut&ndash;Lung Axis Platform</div>
     <h1>Precision gut probiotics<br>for the <em>airways</em></h1>
-    <p class="hero-sub">Targeting the gut&ndash;lung axis to give people with cystic fibrosis and COPD a new way to manage inflammation, starting in the gut.</p>
+    <p class="hero-sub">Targeting the gut&ndash;lung axis to give people with cystic fibrosis and COPD a new way to manage inflammation and complications, starting in the gut.</p>
     <div class="hero-actions">
       <a href="#contact" class="btn btn-teal">Partner with us</a>
       <a href="#product" class="btn btn-ghost">See the science</a>
@@ -248,18 +247,25 @@
 <section id="team">
   <div class="eyebrow">Our Team</div>
   <h2>Leadership &amp; advisors</h2>
-  <p class="lead">Axobiome is led by its founder and guided by a scientific and clinical advisory panel from Dartmouth College and Dartmouth Health.</p>
+  <p class="lead">Axobiome is led by its founders and a dedicated regulatory strategy fellow, and guided by a scientific and clinical advisory panel from Dartmouth College and Dartmouth Health.</p>
   <div class="team-grid">
-    <div class="team-card lead-card">
+    <div class="team-card">
       <div class="team-name">Rebecca Valls, PhD</div>
       <div class="team-role">Co-Founder &amp; Chief Executive Officer</div>
       <div class="team-affil">PhD in Microbiology and Immunology</div>
+    </div>
+    <div class="team-card">
+      <div class="team-name">Galini Poimenidou, PhD</div>
+      <div class="team-role">Business and Regulatory Strategy Fellow</div>
+      <div class="team-affil">Biochemistry PhD with a background in economics and technology transfer; trained in federal science and technology policy on Capitol Hill</div>
     </div>
     <div class="team-card">
       <div class="team-name">George A. O'Toole, PhD</div>
       <div class="team-role">Co-Founder &amp; Scientific Advisor</div>
       <div class="team-affil">Elmer R. Pfefferkorn Professor of Microbiology and Immunology, Dartmouth College, Geisel School of Medicine</div>
     </div>
+  </div>
+  <div class="team-grid">
     <div class="team-card">
       <div class="team-name">Jennifer M. Bomberger, PhD</div>
       <div class="team-role">Scientific Advisor</div>
@@ -269,11 +275,6 @@
       <div class="team-name">Julie L. Sanville, DO, FAAP</div>
       <div class="team-role">Clinical Advisor</div>
       <div class="team-affil">Assistant Professor of Pediatrics, Pediatric Gastroenterologist; Pediatric Program Director, NH CF Center at Dartmouth Health</div>
-    </div>
-    <div class="team-card">
-      <div class="team-name">Galini Poimenidou, PhD</div>
-      <div class="team-role">Business and Regulatory Strategy Fellow</div>
-      <div class="team-affil">Biochemistry PhD with a background in economics and technology transfer; trained in federal science and technology policy on Capitol Hill</div>
     </div>
   </div>
 </section>
