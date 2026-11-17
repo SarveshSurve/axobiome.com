@@ -17,7 +17,7 @@
   body{font-family:'Inter',sans-serif;background:var(--white);color:var(--charcoal);line-height:1.6;overflow-x:hidden;}
 
   /* NAV */
-  nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(255,255,255,0.96);backdrop-filter:blur(10px);border-bottom:1px solid rgba(43,189,180,0.12);padding:0 6%;height:72px;display:flex;align-items:center;justify-content:space-between;}
+  nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(255,255,255,0.96);backdrop-filter:blur(10px);border-bottom:1px solid rgba(43,189,180,0.12);padding:0 6%;height:92px;display:flex;align-items:center;justify-content:space-between;}
   /* ↓↓↓ LOGO SIZE — change the height value here to resize the nav logo ↓↓↓ */
   .nav-logo img{height:80px;width:auto;}
   /* ↑↑↑ LOGO SIZE — width stays auto so it scales proportionally          ↑↑↑ */
@@ -33,7 +33,7 @@
     display:grid;
     grid-template-columns:1fr 1fr;
     align-items:center;
-    padding-top:72px;
+    padding-top:92px;
     position:relative;
     overflow:hidden;
   }
@@ -50,7 +50,7 @@
   .hero-right{
     background:var(--teal-light);
     height:100%;
-    min-height:calc(100vh - 72px);
+    min-height:calc(100vh - 92px);
     display:flex;
     flex-direction:column;
     justify-content:center;
@@ -136,7 +136,8 @@
   }
   #contact h2{color:var(--white);margin-bottom:1rem;position:relative;z-index:1;}
   #contact p{color:rgba(255,255,255,0.75);font-size:1rem;font-weight:300;max-width:500px;margin:0 auto 2.5rem;line-height:1.75;position:relative;z-index:1;}
-  .contact-email{display:inline-block;background:var(--white);color:var(--teal-deep);padding:0.9rem 2.25rem;border-radius:100px;font-weight:600;font-size:0.9rem;text-decoration:none;transition:opacity 0.2s;position:relative;z-index:1;}
+  .contact-buttons{display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;position:relative;z-index:1;}
+  .contact-email{display:inline-block;background:var(--white);color:var(--teal-deep);padding:0.9rem 2.25rem;border-radius:100px;font-weight:600;font-size:0.9rem;text-decoration:none;transition:opacity 0.2s;position:relative;z-index:1;border:none;cursor:pointer;font-family:'Inter',sans-serif;min-width:230px;}
   .contact-email:hover{opacity:0.88;}
 
   footer{background:var(--charcoal);text-align:center;padding:1.5rem 8%;font-size:0.78rem;color:rgba(255,255,255,0.3);}
@@ -282,8 +283,29 @@
 <section id="contact">
   <h2>Let&rsquo;s talk</h2>
   <p>We are actively seeking collaborators, clinical partners, and investors to advance Axoguard 01 toward clinical evaluation in people with CF and COPD.</p>
-  <a href="mailto:rebecca@axobiome.com,galini@axobiome.com" class="contact-email">rebecca@axobiome.com &middot; galini@axobiome.com</a>
+  <div class="contact-buttons">
+    <button type="button" class="contact-email" data-email="rebecca@axobiome.com" onclick="copyEmail(this)">Email Rebecca</button>
+    <button type="button" class="contact-email" data-email="galini@axobiome.com" onclick="copyEmail(this)">Email Galini</button>
+  </div>
 </section>
+
+<script>
+function copyEmail(btn){
+  var email = btn.getAttribute('data-email');
+  var original = btn.textContent;
+  function showCopied(){
+    btn.textContent = 'Copied: ' + email;
+    setTimeout(function(){ btn.textContent = original; }, 1800);
+  }
+  if (navigator.clipboard && navigator.clipboard.writeText) {
+    navigator.clipboard.writeText(email).then(showCopied, function(){
+      window.location.href = 'mailto:' + email;
+    });
+  } else {
+    window.location.href = 'mailto:' + email;
+  }
+}
+</script>
 
 <footer>
   <p>&copy; 2026 Axobiome, Inc. &middot; Hanover, NH</p>
